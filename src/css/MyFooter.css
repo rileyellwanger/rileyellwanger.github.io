@@ -1,0 +1,13 @@
+.footer {
+    margin-top: auto;
+    min-height: 7vh;
+    padding: 0px 25px;
+}
+
+.mail-icon {
+    padding: 0px 10px;
+}
+
+.github-icon {
+    padding: 0px 20px;
+}

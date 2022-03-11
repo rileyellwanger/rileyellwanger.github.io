@@ -1,0 +1,20 @@
+.Header {
+    background-image: url('../images/trees.jpg');
+    background-size:cover;
+    /* background-color: #1e505f; */
+  }
+  
+  .HeaderCol {
+    margin-right: 0%;
+  }
+  
+  .fullLogo {
+    height:100%;
+    width:40%;
+  }
+  
+  .logo {
+    height: 15%;
+    width: 15%;
+    padding-top: 10px;
+  }
