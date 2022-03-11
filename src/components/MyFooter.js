@@ -1,4 +1,4 @@
-import { Grid, Col, Row } from 'rsuite';
+import { Grid, Row } from 'rsuite';
 import { Icon } from '@rsuite/icons';
 import { IoIosMail as Mail } from 'react-icons/io';
 import { AiFillGithub as Github } from 'react-icons/ai';
