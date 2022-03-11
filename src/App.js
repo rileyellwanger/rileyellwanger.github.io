@@ -3,12 +3,14 @@ import { CustomProvider, Container, Header, Content, Footer } from 'rsuite';
 import 'rsuite/dist/rsuite.min.css';
 import MyHeader from './components/MyHeader';
 import AboutMe from './components/AboutMe';
+import WelcomeModal from './components/WelcomeModal';
 import MyFooter from './components/MyFooter';
 
 function App() {
   return (
     <div className="App">
       <CustomProvider theme='dark'>
+        <WelcomeModal/>
         <Container>
           <Header className="Header"><MyHeader/></Header>
           <Content>
