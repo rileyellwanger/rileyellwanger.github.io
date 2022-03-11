@@ -4,7 +4,7 @@ import '../css/WelcomeModal.css';
 import logo from '../images/logo_transparent_background.png';
 
 function WelcomeModal() {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = React.useState(true);
   const handleClose = () => setOpen(false);
 
   return (
