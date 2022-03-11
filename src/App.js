@@ -1,23 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
+import { CustomProvider, Container, Header, Content, Footer } from 'rsuite';
+import 'rsuite/dist/rsuite.min.css';
+import MyHeader from './components/MyHeader';
+import AboutMe from './components/AboutMe';
+import MyFooter from './components/MyFooter';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <CustomProvider theme='dark'>
+        <Container>
+          <Header className="Header"><MyHeader/></Header>
+          <Content>
+            <AboutMe/>
+          </Content>
+          <Footer><MyFooter/></Footer>
+        </Container>
+      </CustomProvider>
     </div>
   );
 }

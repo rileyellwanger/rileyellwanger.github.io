@@ -1,0 +1,14 @@
+.about-me-header-row {
+    padding-top:50px;
+}
+
+.story-main-row {
+    padding-top: 20px;
+}
+
+.headshot {
+    border-radius: 50%;
+    padding: 5px;
+    height: 175px;
+    width: 175px;
+  }
