@@ -1,5 +1,5 @@
 .about-me-header-row {
-    padding-top:50px;
+    padding-top:30px;
 }
 
 .story-main-row {
@@ -9,6 +9,6 @@
 .headshot {
     border-radius: 50%;
     padding: 5px;
-    height: 175px;
-    width: 175px;
+    height: 150px;
+    width: 150px;
   }
