@@ -17,12 +17,6 @@ function MyStory() {
             <Col xs={6}/>
           </Row>
         </Animation.Slide>
-        <Row className='story-main-row'>
-          <Col className='main-content' xs={22}>
-          </Col>
-          <Col className='steps-col' xs={2}>
-          </Col>
-        </Row>
       </Grid>
     </div>
   )
