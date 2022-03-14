@@ -20,8 +20,6 @@ function MyHeader() {
               <img className='fullLogo' src={fullLogo} alt='Riley Ellwanger'/>
             </Animation.Slide>
           </Col>
-          <Col xs={6}>
-          </Col>
         </Row>
       </Grid>
     </div>

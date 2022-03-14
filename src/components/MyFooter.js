@@ -11,9 +11,12 @@ function MyFooter() {
         <a className='mail-icon' href='mailto: rileyellwanger@outlook.com'>
           <Icon as={Mail} size='2em' style={{ color: '#0c9b64' }} />
         </a>
-        <a className='github-icon' href='https://github.com/rileyellwanger/rileyellwanger.github.io'>
+        <a className='github-icon' 
+          href='https://github.com/rileyellwanger/rileyellwanger.github.io' 
+          target='_blank'
+          rel='noreferrer noopener'>
           <Icon as={Github} size='2em' style={{ color: '#0c9b64' }} />
-          </a>
+        </a>
       </Row>
     </Grid>
   )
