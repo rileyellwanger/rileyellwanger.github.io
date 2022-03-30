@@ -5,7 +5,7 @@ const seniorProject = <p>
     organize, and access their research data for analysis. During this project my team and I worked in an Agile 
     framework with weekly sponsor meetings, and regular releases to gather and prioritize requirements of the 
     project from the sponsor, build a story map, choose an infrastructure and tech stack, and finally implement 
-    the solution. W. I loved working with the sponsors and my team to understand their needs and requirements, 
+    the solution. I loved working with the sponsors and my team to understand their needs and requirements, 
     and design and build a system to meet those needs. 
 </p>
 
