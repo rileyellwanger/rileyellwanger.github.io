@@ -28,7 +28,6 @@ function AboutMe() {
         <Section align='right' text={switchToCS}/>
         <Section align='left' text={creteInternship}/>
         <Section align='right' text={seniorProject}/>
-        <Section align='left' text={udig}/>
       </Grid>
     </div>
   )
