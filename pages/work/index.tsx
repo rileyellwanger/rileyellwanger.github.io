@@ -16,18 +16,20 @@ export default function WorkPage() {
         rel="noreferrer"
         target="_blank"
       >
-        <Card className="w-full h-[450px] relative overflow-hidden text-white">
-          <CardHeader className="absolute z-10 top-0 w-full justify-center pt-4">
-            <h1 className={title()}>Sentinel Fertigation</h1>
+        <Card className="w-full relative overflow-hidden text-white">
+          <CardHeader className="relative z-10 w-full justify-center pt-4">
+            <h1 className={title({ class: "text-center" })}>
+              Sentinel Fertigation
+            </h1>
           </CardHeader>
           <Image
             removeWrapper
             alt="Background"
-            className="z-0 w-full h-full object-cover"
+            className="absolute inset-0 z-0 w-full h-full object-cover"
             src="/corn background.jpg"
           />
           <div className="absolute inset-0 bg-black/50" />
-          <CardBody className="absolute z-10 top-[80px] bottom-[80px] gap-2 w-full px-12">
+          <CardBody className="relative z-10 gap-2 w-full px-12 py-8">
             <p className="text-lg text-center">
               <span className="text-xl font-bold">Image Analytics</span> - Image
               processing pipeline; the backbone of our recommendations and
@@ -65,7 +67,7 @@ export default function WorkPage() {
               for our nitrogen recommendations.
             </p>
           </CardBody>
-          <CardFooter className="absolute z-10 bottom-0 justify-center pb-4">
+          <CardFooter className="relative z-10 justify-center pb-4">
             <p className="text-md text-center">
               <span className="text-lg font-bold">Technology</span> - Mapbox,
               Turf.js, Python, Geopandas, GDAL, PostGIS, Celery, Redis, Docker,
@@ -75,18 +77,18 @@ export default function WorkPage() {
         </Card>
       </a>
       <Spacer y={16} />
-      <Card className="w-full h-[250px] relative overflow-hidden text-white">
-        <CardHeader className="absolute z-10 top-0 w-full justify-center pt-4">
-          <h1 className={title()}>Freelance</h1>
+      <Card className="w-full relative overflow-hidden text-white">
+        <CardHeader className="relative z-10 w-full justify-center pt-4">
+          <h1 className={title({ class: "text-center" })}>Freelance</h1>
         </CardHeader>
         <Image
           removeWrapper
           alt="Background"
-          className="z-0 w-full h-full object-cover"
+          className="absolute inset-0 z-0 w-full h-full object-cover"
           src="/soil circuits.jpg"
         />
         <div className="absolute inset-0 bg-black/50" />
-        <CardBody className="absolute z-10 top-[80px] justify-center gap-2 w-full px-12">
+        <CardBody className="relative z-10 gap-2 w-full px-12 py-8">
           <p className="text-lg text-center">
             <span className="text-xl font-bold">Data Migrations</span> - Migrate
             well monitoring and chemigation data from historical spreadsheets,
@@ -95,18 +97,20 @@ export default function WorkPage() {
         </CardBody>
       </Card>
       <Spacer y={16} />
-      <Card className="w-full h-[300px] relative overflow-hidden text-white">
-        <CardHeader className="absolute z-10 top-0 w-full justify-center pt-4">
-          <h1 className={title()}>Senior Design Project</h1>
+      <Card className="w-full relative overflow-hidden text-white">
+        <CardHeader className="relative z-10 w-full justify-center pt-4">
+          <h1 className={title({ class: "text-center" })}>
+            Senior Design Project
+          </h1>
         </CardHeader>
         <Image
           removeWrapper
           alt="Background"
-          className="z-0 w-full h-full object-cover"
+          className="absolute inset-0 z-0 w-full h-full object-cover"
           src="/sandhills background.jpg"
         />
         <div className="absolute inset-0 bg-black/50" />
-        <CardBody className="absolute z-10 top-[80px] justify-center gap-2 w-full px-12">
+        <CardBody className="relative z-10 gap-2 w-full px-12 py-8">
           <p className="text-lg text-center">
             Worked with a team of 5 other seniors to develop a flexible web
             application for a cattle research facility to manage their research
@@ -119,18 +123,20 @@ export default function WorkPage() {
         </CardBody>
       </Card>
       <Spacer y={16} />
-      <Card className="w-full h-[250px] relative overflow-hidden text-white">
-        <CardHeader className="absolute z-10 top-0 w-full justify-center pt-4">
-          <h1 className={title()}>Internship at Crete Carrier</h1>
+      <Card className="w-full relative overflow-hidden text-white">
+        <CardHeader className="relative z-10 w-full justify-center pt-4">
+          <h1 className={title({ class: "text-center" })}>
+            Internship at Crete Carrier
+          </h1>
         </CardHeader>
         <Image
           removeWrapper
           alt="Background"
-          className="z-0 w-full h-full object-cover"
+          className="absolute inset-0 z-0 w-full h-full object-cover"
           src="/truck background.jpg"
         />
         <div className="absolute inset-0 bg-black/50" />
-        <CardBody className="absolute z-10 top-[80px] bottom-[80px] justify-center gap-2 w-full px-12">
+        <CardBody className="relative z-10 gap-2 w-full px-12 py-8">
           <p className="text-lg text-center">
             I cut my teeth in software engineering at Crete Carrier, where I
             focused on rewriting legacy applications in a modern stack. I also
@@ -139,7 +145,7 @@ export default function WorkPage() {
             process.
           </p>
         </CardBody>
-        <CardFooter className="absolute z-10 bottom-0 justify-center pb-4">
+        <CardFooter className="relative z-10 justify-center pb-4">
           <p className="text-md text-center">
             <span className="text-lg font-bold">Technology</span> - Vue.js,
             Node.js, Express, SQLServer
@@ -147,18 +153,20 @@ export default function WorkPage() {
         </CardFooter>
       </Card>
       <Spacer y={16} />
-      <Card className="w-full h-[250px] relative overflow-hidden text-white">
-        <CardHeader className="absolute z-10 top-0 w-full justify-center pt-4">
-          <h1 className={title()}>Nebraska Game & Parks</h1>
+      <Card className="w-full relative overflow-hidden text-white">
+        <CardHeader className="relative z-10 w-full justify-center pt-4">
+          <h1 className={title({ class: "text-center" })}>
+            Nebraska Game & Parks
+          </h1>
         </CardHeader>
         <Image
           removeWrapper
           alt="Background"
-          className="z-0 w-full h-full object-cover"
+          className="absolute inset-0 z-0 w-full h-full object-cover"
           src="/landscape.jpg"
         />
         <div className="absolute inset-0 bg-black/50" />
-        <CardBody className="absolute z-10 top-[80px] justify-center gap-2 w-full px-12">
+        <CardBody className="relative z-10 gap-2 w-full px-12 py-8">
           <p className="text-lg text-center">
             As a Conservation Technician, I primarily worked on habitat
             management projects, such as prescribed burns, weed control, food
@@ -167,18 +175,18 @@ export default function WorkPage() {
         </CardBody>
       </Card>
       <Spacer y={16} />
-      <Card className="w-full h-[250px] relative overflow-hidden text-white">
-        <CardHeader className="absolute z-10 top-0 w-full justify-center pt-4">
-          <h1 className={title()}>Intern at N-CORPE</h1>
+      <Card className="w-full relative overflow-hidden text-white">
+        <CardHeader className="relative z-10 w-full justify-center pt-4">
+          <h1 className={title({ class: "text-center" })}>Intern at N-CORPE</h1>
         </CardHeader>
         <Image
           removeWrapper
           alt="Background"
-          className="z-0 w-full h-full object-cover"
+          className="absolute inset-0 z-0 w-full h-full object-cover"
           src="/prairie.jpg"
         />
         <div className="absolute inset-0 bg-black/50" />
-        <CardBody className="absolute z-10 top-[80px] justify-center gap-2 w-full px-12">
+        <CardBody className="relative z-10 gap-2 w-full px-12 py-8">
           <p className="text-lg text-center">
             N-CORPE is a grassland restoration project that retired irrigated
             farmland to conserve groundwater to fulfill interstate compacts. I
