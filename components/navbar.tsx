@@ -4,20 +4,21 @@ import {
   NavbarMenuToggle,
   NavbarBrand,
   NavbarItem,
+  NavbarMenu,
+  NavbarMenuItem,
 } from "@heroui/navbar";
 import { link as linkStyles } from "@heroui/theme";
 import NextLink from "next/link";
 import clsx from "clsx";
 
 import { siteConfig } from "@/config/site";
-import { ThemeSwitch } from "@/components/theme-switch";
 
 export const Navbar = () => {
   return (
     <HeroUINavbar className="bg-primary" maxWidth="xl" position="sticky">
       <NavbarContent className="basis-1/4 sm:basis-full" justify="start">
-        <NavbarBrand className="gap-3">
-          <NextLink className="flex justify-start items-center gap-1" href="/">
+        <NavbarBrand>
+          <NextLink className="flex justify-start items-center gap-2" href="/">
             <img
               alt="Logo"
               className="w-10 h-10 rounded-full"
@@ -52,16 +53,28 @@ export const Navbar = () => {
       <NavbarContent
         className="hidden sm:flex basis-1/4 sm:basis-full"
         justify="end"
-      >
-        <NavbarItem className="hidden sm:flex gap-2">
-          <ThemeSwitch />
-        </NavbarItem>
-      </NavbarContent>
+      />
 
       <NavbarContent className="sm:hidden basis-1 pl-4" justify="end">
-        <ThemeSwitch />
         <NavbarMenuToggle />
       </NavbarContent>
+
+      <NavbarMenu>
+        {siteConfig.navItems.map((item) => (
+          <NavbarMenuItem key={item.href}>
+            <NextLink
+              className={clsx(
+                linkStyles({ color: "foreground" }),
+                "w-full",
+                "data-[active=true]:text-primary data-[active=true]:font-medium",
+              )}
+              href={item.href}
+            >
+              {item.label}
+            </NextLink>
+          </NavbarMenuItem>
+        ))}
+      </NavbarMenu>
     </HeroUINavbar>
   );
 };

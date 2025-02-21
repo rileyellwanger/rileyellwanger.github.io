@@ -19,7 +19,7 @@ export default function WorkPage() {
         <Card className="w-full relative overflow-hidden text-white">
           <CardHeader className="relative z-10 w-full justify-center pt-4">
             <h1 className={title({ class: "text-center" })}>
-              Sentinel Fertigation
+              Innovation at Sentinel
             </h1>
           </CardHeader>
           <Image
