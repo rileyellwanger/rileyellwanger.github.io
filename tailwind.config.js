@@ -20,15 +20,6 @@ module.exports = {
   darkMode: "class",
   plugins: [heroui({
     themes: {
-      light: {
-        colors: {
-          primary: {
-            DEFAULT: "#359958",
-            foreground: "#ffffff",
-          },
-          focus: "#359958",
-        },
-      },
       dark: {
         colors: {
           primary: {
