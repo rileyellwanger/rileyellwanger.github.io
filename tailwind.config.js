@@ -17,11 +17,19 @@ module.exports = {
       },
     },
   },
-  darkMode: ["class", '[data-theme="dark"]'],
+  darkMode: "class",
   plugins: [heroui({
     themes: {
+      light: {
+        colors: {
+          primary: {
+            DEFAULT: "#0c593f",
+            foreground: "#ffffff",
+          },
+          focus: "#0c593f",
+        },
+      },
       dark: {
-        default: "dark",
         colors: {
           primary: {
             DEFAULT: "#0c593f",
