@@ -1,8 +1,10 @@
 # Portfolio
 
-## Technologies Used
+Personal site for Riley Ellwanger, hosted on GitHub Pages.
 
-- [Next.js 14](https://nextjs.org/docs/getting-started)
+## Technologies
+
+- [Next.js 15](https://nextjs.org/docs)
 - [HeroUI](https://heroui.com)
 - [Tailwind CSS](https://tailwindcss.com)
 - [Tailwind Variants](https://tailwind-variants.org)
@@ -12,9 +14,14 @@
 
 ### Install dependencies
 
-You can use one of them `npm`, `yarn`, `pnpm`, `bun`, Example using `npm`:
-
 ```bash
+npm install
+```
+
+On some Windows or corporate networks, TLS may require the system certificate store:
+
+```powershell
+$env:NODE_OPTIONS='--use-system-ca'
 npm install
 ```
 

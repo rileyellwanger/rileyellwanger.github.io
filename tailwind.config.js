@@ -1,5 +1,4 @@
-import {heroui} from "@heroui/theme"
-import { li } from "framer-motion/client"
+import { heroui } from "@heroui/theme";
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -12,8 +11,15 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["var(--font-sans)"],
-        mono: ["var(--font-mono)"],
+        sans: [
+          "Inter",
+          "ui-sans-serif",
+          "system-ui",
+          "sans-serif",
+          "Apple Color Emoji",
+          "Segoe UI Emoji",
+        ],
+        mono: ["Fira Code", "ui-monospace", "monospace"],
       },
     },
   },

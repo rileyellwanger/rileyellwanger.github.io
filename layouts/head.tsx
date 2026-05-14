@@ -1,7 +1,9 @@
 import React from "react";
 import NextHead from "next/head";
 
-import { siteConfig } from "@/config/site";
+import { siteConfig, siteUrl } from "@/config/site";
+
+const ogImage = `${siteUrl}/corn-background.jpg`;
 
 export const Head = () => {
   return (
@@ -10,9 +12,16 @@ export const Head = () => {
       <meta key="title" content={siteConfig.name} property="og:title" />
       <meta content={siteConfig.description} property="og:description" />
       <meta content={siteConfig.description} name="description" />
+      <meta content={siteUrl} property="og:url" />
+      <meta content="website" property="og:type" />
+      <meta content={ogImage} property="og:image" />
+      <meta content="summary_large_image" name="twitter:card" />
+      <meta content={siteConfig.name} name="twitter:title" />
+      <meta content={siteConfig.description} name="twitter:description" />
+      <meta content={ogImage} name="twitter:image" />
       <meta
         key="viewport"
-        content="viewport-fit=cover, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+        content="width=device-width, initial-scale=1"
         name="viewport"
       />
       <link href="/favicon.ico" rel="icon" />
