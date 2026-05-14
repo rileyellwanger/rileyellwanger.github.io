@@ -28,7 +28,7 @@ export default function DefaultLayout({
           >
             <FontAwesomeIcon className="text-2xl" icon={faEnvelope} />
             <span className="text-sm underline-offset-4 hover:underline">
-              rileyellwanger@outlook.com
+              {siteConfig.links.emailDisplay}
             </span>
           </Link>
           <Link

@@ -1,107 +1,160 @@
-import { Spacer } from "@heroui/spacer";
-import { Link } from "@heroui/link";
-import { Image } from "@heroui/image";
+import type { ReactNode } from "react";
 
+import { Spacer } from "@heroui/spacer";
+import { Button } from "@heroui/button";
+import { Link } from "@heroui/link";
+
+import { EditorialSplitCard } from "@/components/editorial-split-card";
 import { title } from "@/components/primitives";
 import DefaultLayout from "@/layouts/default";
+
+const timeline = [
+  {
+    title: "Field and studies",
+    body: "Farm and ranch work; Wildlife Ecology, then a pivot to Computer Science when software looked like the biggest lever for land and water.",
+  },
+  {
+    title: "Today",
+    body: "Senior Software Engineer at Sentinel Ag—imagery pipelines, maps and drawing tools, agronomic data, and product work farmers actually run in season.",
+  },
+] as const;
+
+function SectionBlock({
+  subtitle,
+  children,
+}: {
+  subtitle: string;
+  children: ReactNode;
+}) {
+  return (
+    <section className="space-y-3">
+      <h3 className="text-left text-lg font-semibold tracking-tight text-foreground">
+        {subtitle}
+      </h3>
+      <div className="text-left text-base leading-relaxed text-default-700">
+        {children}
+      </div>
+    </section>
+  );
+}
 
 export default function AboutPage() {
   return (
     <DefaultLayout>
-      <section className="relative isolate overflow-hidden py-8 md:py-10">
-        <Image
-          removeWrapper
-          alt="Abstract digital tree motif over a natural palette"
-          className="pointer-events-none absolute inset-0 z-0 h-full min-h-full w-full object-cover"
-          src="/digital-tree-background.jpg"
-        />
-        <div className="pointer-events-none absolute inset-0 z-[1] bg-black/70" />
-        <div className="relative z-10 mx-auto max-w-3xl px-6 text-center overlay-image-text text-white">
-          <h1 className={title()}>About</h1>
-          <p className="mt-6 text-lg">
-            I am Riley Ellwanger, a software engineer whose roots are deeply
-            embedded in agriculture. My background in agriculture and growing up
-            in the outdoors naturally led me to pursue a degree in Wildlife
-            Ecology. However, my path took an exciting turn when I realized the
-            potential of software to not only enhance but also revolutionize
-            agriculture and conservation. That epiphany guided me to switch my
-            focus to Computer Science, where I could magnify my impact on the
-            environment through technology.
-          </p>
-          <Spacer y={6} />
-          <p className="text-lg">
-            Now, I thrive in the dynamic and innovative environment of AgTech
-            startups, where I&apos;ve found my niche as a Senior Software
-            Engineer at Sentinel Fertigation. Here, I&apos;m deeply involved in
-            creating software solutions that marry the best of both worlds—the
-            natural and the digital. My expertise spans full-stack web
-            development, geospatial data analysis, map visualizations and
-            drawing, image processing, and agriculture data management, all of
-            which enable me to push the boundaries of what&apos;s possible in
-            farming technology, help farmers optimize their nitrogen management,
-            and keep excess nitrogen out of our waterways.
-          </p>
-          <Spacer y={6} />
-          <p className="text-lg">
-            My biggest hobbies are hunting and fishing. I particularly enjoy
-            bowhunting for deer and turkey, and fishing for bass, but the best
-            part is sharing the experience and harvest with friends and family.
-            I&apos;m always eager to discuss new projects, share ideas, or
-            explore how we can work together to make a positive impact on the
-            environment through technology. Feel free to reach out for
-            collaborations, or just to chat about the future of farming.
-          </p>
-          <Spacer y={12} />
-          <h2 className={title({ size: "sm" })}>
-            Designing software with natural principles
-          </h2>
-          <p className="mt-6 text-lg">
-            My work in software engineering is inspired by the ecological
-            principles I studied in Wildlife Ecology. Just as a diverse
-            ecosystem is more resilient to change, I believe that software
-            should be designed with a diverse set of functions that work
-            together to create a robust and adaptable system. This approach
-            allows for greater flexibility, scalability, and efficiency,
-            ensuring that the software can evolve and adapt to changing
-            conditions over time. I strive for equilibrium in design, where
-            simplicity and complexity are balanced to create a harmonious and
-            efficient system that is both elegant and powerful.
-          </p>
-          <Spacer y={12} />
-          <h2 className={title({ size: "sm" })}>From the ground up</h2>
-          <p className="mt-6 text-lg">
-            My journey from working on ranches, construction sites, and
-            conservation areas has been a rich soil for my growth as a software
-            engineer. The unpredictability of a ranch taught me to build
-            software that&apos;s robust and adaptable, capable of handling the
-            unexpected. Construction projects taught me the importance of
-            precision and accuracy in software design, where every detail
-            matters. Conservation work taught me how to prioritize balance and
-            sustainability in software development, where the long-term impact
-            is always considered.
-          </p>
-          <Spacer y={12} />
-          <h2 className={title({ size: "sm" })}>User-driven innovation</h2>
-          <p className="mt-6 text-lg">
-            Software can only go as far as people take it. Software should make
-            people&apos;s lives easier; that&apos;s where the real value lies.
-            My unique blend of experiences, and people I&apos;ve worked with,
-            enables me to create software that&apos;s intuitive, efficient, and
-            effective. I&apos;ve learned to listen, not just to what is said,
-            but to find the underlying needs and desires that drive
-            people&apos;s actions, crafting software that speaks the language of
-            its users. My software isn&apos;t just a tool; it&apos;s an ally to
-            those in agriculture, designed to augment decision-making and labor.
-          </p>
-          <Spacer y={8} />
-          <Link
-            className="text-sky-300 underline hover:text-sky-200"
-            href="/work"
-          >
+      <div className="flex flex-col gap-16 py-8 md:py-10">
+        <EditorialSplitCard
+          eyebrow="About"
+          heading={
+            <h1
+              className={title({
+                fullWidth: true,
+                class: "text-left text-foreground",
+              })}
+            >
+              About
+            </h1>
+          }
+          imageAlt="Abstract digital tree motif over a natural palette"
+          imageSrc="/digital-tree-background.jpg"
+        >
+          <div className="space-y-6">
+            <p className="text-left text-base leading-relaxed text-default-700">
+              I am Riley Ellwanger, a software engineer whose roots are deeply
+              embedded in agriculture. Growing up outdoors naturally pulled me
+              toward Wildlife Ecology—until I saw how much leverage software
+              could add for both agriculture and conservation. That shift sent
+              me into Computer Science so I could magnify my impact on the
+              environment through technology, not despite it.
+            </p>
+            <p className="text-left text-base leading-relaxed text-default-700">
+              Now I thrive in AgTech startups, most recently as a Senior
+              Software Engineer at Sentinel Ag. I spend my days where
+              the natural and the digital meet: full-stack web work, geospatial
+              analysis, map visualizations and drawing, image processing, and
+              agriculture data management—so we can help farmers tighten
+              nitrogen management and keep excess nitrogen out of waterways.
+            </p>
+            <div className="rounded-xl border border-default-200 bg-default-100/80 px-5 py-6 sm:px-8">
+              <p className="text-center text-xs font-semibold uppercase tracking-[0.2em] text-default-500">
+                At a glance
+              </p>
+              <ul className="mt-5 space-y-5">
+                {timeline.map((item) => (
+                  <li
+                    key={item.title}
+                    className="border-l-2 border-primary pl-4 text-left"
+                  >
+                    <p className="font-semibold text-foreground">
+                      {item.title}
+                    </p>
+                    <p className="mt-1 text-base leading-relaxed text-default-600">
+                      {item.body}
+                    </p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <p className="text-left text-base leading-relaxed text-default-700">
+              Off the clock my world is still outside: bowhunting deer and
+              turkey, bass fishing, and sharing the harvest with friends and
+              family. I&apos;m always glad to talk new ideas, collaboration, or
+              where farming and software are headed next.
+            </p>
+          </div>
+        </EditorialSplitCard>
+
+        <EditorialSplitCard
+          eyebrow="How I build"
+          heading={
+            <h2
+              className={title({
+                size: "sm",
+                fullWidth: true,
+                class: "text-left text-foreground",
+              })}
+            >
+              Principles that carry into code
+            </h2>
+          }
+          imageAlt="Sandhills prairie landscape"
+          imageSrc="/sandhills-background.jpg"
+        >
+          <div className="space-y-10">
+            <SectionBlock subtitle="Designing software with natural principles">
+              <p>
+                My engineering instincts borrow from ecology: diverse,
+                composable pieces that work together tend to survive change
+                better than one brittle monolith. I aim for balance—enough
+                structure to ship reliably, enough flexibility to adapt when the
+                field (literal or figurative) throws something new at you.
+              </p>
+            </SectionBlock>
+            <SectionBlock subtitle="From the ground up">
+              <p>
+                Ranches, construction crews, and conservation crews each taught
+                me something different. Ranch work rewards systems that handle
+                surprises. Construction rewards precision. Conservation rewards
+                thinking in decades, not just sprints. That mix shows up in how
+                I scope, test, and hand off software.
+              </p>
+            </SectionBlock>
+            <SectionBlock subtitle="User-driven innovation">
+              <p>
+                Software only matters if people carry it into practice. My field
+                experience, together with the people I&apos;ve learned
+                alongside, pushes me toward interfaces and workflows that
+                respect real time pressure. I listen for what isn&apos;t said as
+                much as what is—then build tools that feel like an ally in the
+                cab or the office, not another chore.
+              </p>
+            </SectionBlock>
+          </div>
+          <Spacer y={4} />
+          <Button as={Link} color="primary" href="/work" variant="flat">
             Learn more about my work
-          </Link>
-        </div>
-      </section>
+          </Button>
+        </EditorialSplitCard>
+      </div>
     </DefaultLayout>
   );
 }

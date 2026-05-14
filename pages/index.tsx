@@ -1,100 +1,107 @@
-import { Card, CardBody } from "@heroui/card";
-import { Image } from "@heroui/image";
+import NextLink from "next/link";
+import { Button } from "@heroui/button";
 import { Spacer } from "@heroui/spacer";
-import { useRouter } from "next/router";
 
+import { EditorialSplitCard } from "@/components/editorial-split-card";
 import { title } from "@/components/primitives";
 import DefaultLayout from "@/layouts/default";
 
-export default function IndexPage() {
-  const router = useRouter();
+const workChips = [
+  "Sentinel Ag",
+  "Maps & imagery",
+  "Field data",
+] as const;
 
+const aboutChips = ["Wildlife ecology", "Computer science", "AgTech"] as const;
+
+export default function IndexPage() {
   return (
     <DefaultLayout>
-      <Card className="w-full min-h-[400px] relative overflow-hidden">
-        <Image
-          removeWrapper
-          alt="Abstract digital visualization suggesting growth and connectivity"
-          className="object-cover w-full h-full absolute inset-0 z-0"
-          src="/digital-tree-background.jpg"
-        />
-        <div className="absolute inset-0 bg-black/50" />
-        <CardBody className="overlay-image-text relative z-10 flex min-h-[400px] w-full flex-col justify-center gap-4 px-12">
-          <h1 className={title({ class: "text-center" })}>
+      <EditorialSplitCard
+        tall
+        heading={
+          <h1
+            className={title({
+              fullWidth: true,
+              class: "text-left text-foreground",
+            })}
+          >
             Bridging the gap between the ground and the cloud
           </h1>
-          <p className="text-xl text-center">
-            Welcome to my portfolio, I&apos;m Riley, a software engineer with my
-            hands in the dirt and my head in the clouds. Here, I blend my
-            passion for agriculture and the outdoors with cutting-edge
-            technology to tackle complex challenges with elegantly simple
-            solutions.
-          </p>
-        </CardBody>
-      </Card>
+        }
+        imageAlt="Abstract digital visualization suggesting growth and connectivity"
+        imageSrc="/digital-tree-background.jpg"
+      >
+        <p className="text-left text-lg leading-relaxed text-default-700 sm:text-xl">
+          I&apos;m Riley—software engineer with hands in the dirt and head in
+          the clouds. I build where agriculture, maps, and field data meet, so
+          people on the ground get tools that stay clear and dependable through
+          a busy season.
+        </p>
+      </EditorialSplitCard>
 
       <Spacer y={16} />
 
-      <Card
-        isPressable
-        className="w-full min-h-[400px] relative overflow-hidden"
-        onPress={() => {
-          void router.push("/about");
-        }}
+      <EditorialSplitCard
+        chips={aboutChips}
+        eyebrow="About"
+        heading={
+          <h2
+            className={title({
+              size: "sm",
+              fullWidth: true,
+              class: "text-left text-foreground",
+            })}
+          >
+            The path that still grounds how I build
+          </h2>
+        }
+        imageAlt="Tractor in a field at work"
+        imageSrc="/tractor-background.jpg"
       >
-        <Image
-          removeWrapper
-          alt="Tractor in a field at work"
-          className="object-cover w-full h-full absolute inset-0 z-0"
-          src="/tractor-background.jpg"
-        />
-        <div className="absolute inset-0 bg-black/50" />
-        <CardBody className="overlay-image-text relative z-10 flex min-h-[400px] w-full flex-col justify-center gap-4 px-12">
-          <h2 className={title({ class: "text-center" })}>About</h2>
-          <p className="text-lg text-center">
-            Growing up on a farm, I learned to appreciate hard work, patience,
-            and nature while riding in the combine with my grandpa and working
-            on a cattle ranch with my dad. This, along with my love for hunting
-            and fishing, led me to initially pursue a degree in Wildlife
-            Ecology, but once I realized the potential of software to amplify my
-            impact on both agriculture and conservation, I switched to Computer
-            Science. Now, my on-the-ground experience fuels my approach to
-            software design, ensuring it&apos;s efficient and sustainable for
-            the people who use it.
-          </p>
-        </CardBody>
-      </Card>
+        <p className="text-left text-base leading-relaxed text-default-700">
+          Farm kid, combine rides with my grandpa, cattle work with my dad—then
+          wildlife ecology, then a hard pivot into computer science when I saw
+          what code could do for land and water.
+        </p>
+        <div>
+          <Button as={NextLink} color="primary" href="/about" variant="solid">
+            Read full story
+          </Button>
+        </div>
+      </EditorialSplitCard>
 
       <Spacer y={16} />
 
-      <Card
-        isPressable
-        className="w-full min-h-[450px] relative overflow-hidden"
-        onPress={() => {
-          void router.push("/work");
-        }}
+      <EditorialSplitCard
+        chips={workChips}
+        eyebrow="Work"
+        heading={
+          <h2
+            className={title({
+              size: "sm",
+              fullWidth: true,
+              class: "text-left text-foreground",
+            })}
+          >
+            AgTech, maps, and software under real pressure
+          </h2>
+        }
+        imageAlt="Rows of corn in a green field"
+        imageSrc="/corn-background.jpg"
       >
-        <Image
-          removeWrapper
-          alt="Rows of corn in a green field"
-          className="object-cover w-full h-full absolute inset-0 z-0"
-          src="/corn-background.jpg"
-        />
-        <div className="absolute inset-0 bg-black/50" />
-        <CardBody className="overlay-image-text relative z-10 flex min-h-[400px] w-full flex-col justify-center gap-4 px-12">
-          <h2 className={title({ class: "text-center" })}>Work</h2>
-          <p className="text-lg text-center">
-            I have successfully merged my passion for agriculture with my work
-            at Sentinel Fertigation, an AgTech startup, where I develop
-            innovative software solutions that help farmers optimize their
-            nitrogen management—reducing their environmental impact and
-            increasing their profitability. I have gained a wealth of experience
-            in full-stack development, geospatial data analysis, and image
-            processing, and I am always looking for new ways to leverage
-            technology to improve the world around me.
-          </p>
-        </CardBody>
-      </Card>
+        <p className="text-left text-base leading-relaxed text-default-700">
+          Sentinel is where most of my shipping happens today—imagery pipelines,
+          geospatial tooling, and nitrogen workflows that have to survive the
+          cab and the office. Before that, internships and field jobs taught me
+          how brittle systems look when the season won&apos;t wait.
+        </p>
+        <div>
+          <Button as={NextLink} color="primary" href="/work" variant="solid">
+            View work
+          </Button>
+        </div>
+      </EditorialSplitCard>
 
       <Spacer y={16} />
     </DefaultLayout>

@@ -1,215 +1,237 @@
 import { Button } from "@heroui/button";
-import { Card, CardBody, CardHeader, CardFooter } from "@heroui/card";
-import { Image } from "@heroui/image";
 import { Spacer } from "@heroui/spacer";
 
+import { EditorialSplitCard } from "@/components/editorial-split-card";
 import { title } from "@/components/primitives";
 import DefaultLayout from "@/layouts/default";
+
+const sentinelHighlights = [
+  {
+    label: "Image analytics",
+    text: "Image processing pipeline—the backbone of our recommendations and product.",
+  },
+  {
+    label: "Ag data processing",
+    text: "Planting, application, and harvest data turned into insights and recommendations.",
+  },
+  {
+    label: "Management zone creation",
+    text: "Zones from yield, soil samples, satellite imagery, and other layers you choose.",
+  },
+  {
+    label: "Variable rate prescriptions",
+    text: "Prescriptions for fertilizer applications from zones, samples, yield, or imagery—exported for monitor or pivot controller.",
+  },
+  {
+    label: "Automated plot placement",
+    text: "Plots placed in representative areas of the field for nitrogen recommendations.",
+  },
+] as const;
+
+const sentinelChips = ["Imagery", "Geospatial", "Nitrogen tools"] as const;
 
 export default function WorkPage() {
   return (
     <DefaultLayout>
-      <div className="flex flex-col items-center justify-center gap-4 pb-8 md:pb-10">
-        <h1 className={title({})}>Work</h1>
+      <div className="flex flex-col gap-4 pb-8 md:pb-10">
+        <h1
+          className={title({
+            fullWidth: true,
+            class: "text-center text-foreground",
+          })}
+        >
+          Work
+        </h1>
+        <p className="mx-auto max-w-2xl text-center text-default-600">
+          A quick tour of where I&apos;ve spent my time—AgTech first, then
+          earlier internships and field roles that still shape how I build.
+        </p>
       </div>
 
-      <Card className="overlay-image-text relative w-full overflow-hidden text-white">
-        <CardHeader className="relative z-10 w-full justify-center pt-4">
-          <h2 className={title({ class: "text-center" })}>
+      <EditorialSplitCard
+        chips={sentinelChips}
+        eyebrow="AgTech"
+        footer={
+          <>
+            <span className="font-semibold text-default-800">Technology</span>
+            <span> — </span>
+            Mapbox, Turf.js, Python, GeoPandas, GDAL, PostGIS, Celery, Redis,
+            Docker, Azure DevOps
+          </>
+        }
+        heading={
+          <h2
+            className={title({
+              size: "sm",
+              fullWidth: true,
+              class: "text-left text-foreground",
+            })}
+          >
             Innovation at Sentinel
           </h2>
-        </CardHeader>
-        <Image
-          removeWrapper
-          alt="Corn field used as a backdrop for Sentinel Fertigation work"
-          className="absolute inset-0 z-0 h-full w-full object-cover"
-          src="/corn-background.jpg"
-        />
-        <div className="absolute inset-0 z-[1] bg-black/50" />
-        <CardBody className="relative z-10 gap-2 w-full px-12 py-8">
-          <p className="text-lg text-center">
-            <span className="text-xl font-bold">Image analytics</span> — Image
-            processing pipeline; the backbone of our recommendations and
-            product.
-          </p>
-          <br />
-          <p className="text-lg text-center">
-            <span className="text-xl font-bold">Ag data processing</span> —
-            Process and analyze planting, application, and harvest data to
-            generate insights and recommendations.
-          </p>
-          <br />
-          <p className="text-lg text-center">
-            <span className="text-xl font-bold">Management zone creation</span>{" "}
-            — Generate management zones based on any number of data layers,
-            including yield data, soil samples, and satellite imagery.
-          </p>
-          <br />
-          <p className="text-lg text-center">
-            <span className="text-xl font-bold">
-              Variable rate prescriptions
-            </span>{" "}
-            — Create variable rate prescriptions for fertilizer applications
-            based on management zones, soil samples, yield data, or imagery.
-            Export to a file for monitor or pivot controller.
-          </p>
-          <br />
-          <p className="text-lg text-center">
-            <span className="text-xl font-bold">Automated plot placement</span>{" "}
-            — Automatically place plots in representative areas of the field for
-            our nitrogen recommendations.
-          </p>
-          <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
-            <Button
-              as="a"
-              className="text-white"
-              color="primary"
-              href="https://www.sentinelfertigation.com"
-              rel="noreferrer"
-              target="_blank"
-              variant="solid"
-            >
-              Sentinel website
-            </Button>
-          </div>
-        </CardBody>
-        <CardFooter className="relative z-10 justify-center pb-4">
-          <p className="text-md text-center">
-            <span className="text-lg font-bold">Technology</span> — Mapbox,
-            Turf.js, Python, Geopandas, GDAL, PostGIS, Celery, Redis, Docker,
-            Azure DevOps
-          </p>
-        </CardFooter>
-      </Card>
+        }
+        imageAlt="Corn field used as a backdrop for Sentinel Ag work"
+        imageSrc="/corn-background.jpg"
+      >
+        <ul className="space-y-4">
+          {sentinelHighlights.map((row) => (
+            <li key={row.label} className="text-left text-base leading-relaxed">
+              <span className="font-semibold text-foreground">{row.label}</span>
+              <span className="text-default-600"> — </span>
+              <span className="text-default-700">{row.text}</span>
+            </li>
+          ))}
+        </ul>
+        <div>
+          <Button
+            as="a"
+            color="primary"
+            href="https://www.sentinelag.tech"
+            rel="noreferrer"
+            target="_blank"
+            variant="solid"
+          >
+            Sentinel website
+          </Button>
+        </div>
+      </EditorialSplitCard>
 
       <Spacer y={16} />
 
-      <Card className="overlay-image-text relative w-full overflow-hidden text-white">
-        <CardHeader className="relative z-10 w-full justify-center pt-4">
-          <h2 className={title({ class: "text-center" })}>Freelance</h2>
-        </CardHeader>
-        <Image
-          removeWrapper
-          alt="Soil and circuit imagery suggesting data and agriculture"
-          className="absolute inset-0 z-0 h-full w-full object-cover"
-          src="/soil-circuits.jpg"
-        />
-        <div className="absolute inset-0 z-[1] bg-black/50" />
-        <CardBody className="relative z-10 gap-2 w-full px-12 py-8">
-          <p className="text-lg text-center">
-            <span className="text-xl font-bold">Data migrations</span> — Migrate
-            well monitoring and chemigation data from historical spreadsheets
-            and databases to a modern database via API.
-          </p>
-        </CardBody>
-      </Card>
+      <EditorialSplitCard
+        eyebrow="Freelance"
+        heading={
+          <h2
+            className={title({
+              size: "sm",
+              fullWidth: true,
+              class: "text-left text-foreground",
+            })}
+          >
+            Data migrations
+          </h2>
+        }
+        imageAlt="Soil and circuit imagery suggesting data and agriculture"
+        imageSrc="/soil-circuits.jpg"
+      >
+        <p className="text-left text-base leading-relaxed text-default-700">
+          <span className="font-semibold text-foreground">Scope</span>
+          <span className="text-default-600"> — </span>
+          Well monitoring and chemigation history out of spreadsheets and legacy
+          databases into a modern store, exposed through an API.
+        </p>
+      </EditorialSplitCard>
 
       <Spacer y={16} />
 
-      <Card className="overlay-image-text relative w-full overflow-hidden text-white">
-        <CardHeader className="relative z-10 w-full justify-center pt-4">
-          <h2 className={title({ class: "text-center" })}>
+      <EditorialSplitCard
+        eyebrow="Capstone"
+        heading={
+          <h2
+            className={title({
+              size: "sm",
+              fullWidth: true,
+              class: "text-left text-foreground",
+            })}
+          >
             Senior design project
           </h2>
-        </CardHeader>
-        <Image
-          removeWrapper
-          alt="Sandhills prairie landscape"
-          className="absolute inset-0 z-0 h-full w-full object-cover"
-          src="/sandhills-background.jpg"
-        />
-        <div className="absolute inset-0 z-[1] bg-black/50" />
-        <CardBody className="relative z-10 gap-2 w-full px-12 py-8">
-          <p className="text-lg text-center">
-            Worked with a team of five other seniors to develop a flexible web
-            application for a cattle research facility to manage their research
-            projects, replacing their spreadsheet system and allowing them to
-            import them for robust storage and analysis. It was especially
-            fulfilling to facilitate communication and knowledge transfer
-            between the clients and developers, given my experience in both
-            fields.
-          </p>
-        </CardBody>
-      </Card>
+        }
+        imageAlt="Sandhills prairie landscape"
+        imageSrc="/sandhills-background.jpg"
+      >
+        <p className="text-left text-base leading-relaxed text-default-700">
+          With five other seniors, I helped ship a web app for a cattle research
+          facility to manage projects and replace a spreadsheet workflow—so they
+          could import historical records into structured storage and analysis.
+          Bridging ranch vocabulary and developer tradeoffs was the best part of
+          the job.
+        </p>
+      </EditorialSplitCard>
 
       <Spacer y={16} />
 
-      <Card className="overlay-image-text relative w-full overflow-hidden text-white">
-        <CardHeader className="relative z-10 w-full justify-center pt-4">
-          <h2 className={title({ class: "text-center" })}>
-            Internship at Crete Carrier
+      <EditorialSplitCard
+        eyebrow="Internship"
+        footer={
+          <>
+            <span className="font-semibold text-default-800">Technology</span>
+            <span> — </span>
+            Vue.js, Node.js, Express, SQL Server
+          </>
+        }
+        heading={
+          <h2
+            className={title({
+              size: "sm",
+              fullWidth: true,
+              class: "text-left text-foreground",
+            })}
+          >
+            Crete Carrier
           </h2>
-        </CardHeader>
-        <Image
-          removeWrapper
-          alt="Semi truck on the highway"
-          className="absolute inset-0 z-0 h-full w-full object-cover"
-          src="/truck-background.jpg"
-        />
-        <div className="absolute inset-0 z-[1] bg-black/50" />
-        <CardBody className="relative z-10 gap-2 w-full px-12 py-8">
-          <p className="text-lg text-center">
-            I cut my teeth in software engineering at Crete Carrier, where I
-            focused on rewriting legacy applications in a modern stack. I also
-            developed an API-based system for bidding on loads, which replaced a
-            web scraping system and improved the efficiency of the bidding
-            process.
-          </p>
-        </CardBody>
-        <CardFooter className="relative z-10 justify-center pb-4">
-          <p className="text-md text-center">
-            <span className="text-lg font-bold">Technology</span> — Vue.js,
-            Node.js, Express, SQL Server
-          </p>
-        </CardFooter>
-      </Card>
+        }
+        imageAlt="Semi truck on the highway"
+        imageSrc="/truck-background.jpg"
+      >
+        <p className="text-left text-base leading-relaxed text-default-700">
+          I cut my teeth rewriting legacy apps in a modern stack and shipped an
+          API-based load-bidding flow that replaced a brittle web-scraping
+          approach—fewer moving parts when bids had to land on time.
+        </p>
+      </EditorialSplitCard>
 
       <Spacer y={16} />
 
-      <Card className="overlay-image-text relative w-full overflow-hidden text-white">
-        <CardHeader className="relative z-10 w-full justify-center pt-4">
-          <h2 className={title({ class: "text-center" })}>
+      <EditorialSplitCard
+        eyebrow="Field experience"
+        heading={
+          <h2
+            className={title({
+              size: "sm",
+              fullWidth: true,
+              class: "text-left text-foreground",
+            })}
+          >
             Nebraska Game &amp; Parks
           </h2>
-        </CardHeader>
-        <Image
-          removeWrapper
-          alt="Open grassland and sky"
-          className="absolute inset-0 z-0 h-full w-full object-cover"
-          src="/landscape.jpg"
-        />
-        <div className="absolute inset-0 z-[1] bg-black/50" />
-        <CardBody className="relative z-10 gap-2 w-full px-12 py-8">
-          <p className="text-lg text-center">
-            As a Conservation Technician, I primarily worked on habitat
-            management projects, such as prescribed burns, weed control, food
-            plot planting, and wildlife surveys.
-          </p>
-        </CardBody>
-      </Card>
+        }
+        imageAlt="Open grassland and sky"
+        imageSrc="/landscape.jpg"
+      >
+        <p className="text-left text-base leading-relaxed text-default-700">
+          As a Conservation Technician I lived in habitat work—prescribed burns,
+          weed control, food plots, and wildlife surveys—long days that taught
+          me how plans meet weather, equipment, and wildlife that do not read a
+          Gantt chart.
+        </p>
+      </EditorialSplitCard>
 
       <Spacer y={16} />
 
-      <Card className="overlay-image-text relative w-full overflow-hidden text-white">
-        <CardHeader className="relative z-10 w-full justify-center pt-4">
-          <h2 className={title({ class: "text-center" })}>Intern at N-CORPE</h2>
-        </CardHeader>
-        <Image
-          removeWrapper
-          alt="Restored prairie grassland"
-          className="absolute inset-0 z-0 h-full w-full object-cover"
-          src="/prairie.jpg"
-        />
-        <div className="absolute inset-0 z-[1] bg-black/50" />
-        <CardBody className="relative z-10 gap-2 w-full px-12 py-8">
-          <p className="text-lg text-center">
-            N-CORPE is a grassland restoration project that retired irrigated
-            farmland to conserve groundwater to fulfill interstate compacts. I
-            worked under the range manager to reseed grasslands, control weeds,
-            and develop grazing and reseeding plans.
-          </p>
-        </CardBody>
-      </Card>
+      <EditorialSplitCard
+        eyebrow="Field experience"
+        heading={
+          <h2
+            className={title({
+              size: "sm",
+              fullWidth: true,
+              class: "text-left text-foreground",
+            })}
+          >
+            Intern at N-CORPE
+          </h2>
+        }
+        imageAlt="Restored prairie grassland"
+        imageSrc="/prairie.jpg"
+      >
+        <p className="text-left text-base leading-relaxed text-default-700">
+          N-CORPE retired irrigated cropland to grassland to protect groundwater
+          under interstate compacts. With the range manager I reseeded, fought
+          weeds, and helped shape grazing and reseeding plans—work that still
+          informs how I think about long-horizon stewardship.
+        </p>
+      </EditorialSplitCard>
 
       <Spacer y={16} />
     </DefaultLayout>

@@ -18,6 +18,7 @@ export const siteConfig = {
     /** Public GitHub Pages source for this site */
     siteRepo: "https://github.com/rileyellwanger/rileyellwanger.github.io",
     email: "mailto:rileyellwanger@outlook.com",
+    emailDisplay: "rileyellwanger@outlook.com",
     /** Place a PDF at public/resume.pdf to enable the resume link */
     resume: "/resume.pdf",
   },
